@@ -12,13 +12,9 @@ function App() {
   const [inputText, setInputText] = useState('');
   const [todos, setTodos] = useState<TodoItem[]>([]);
 
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    setInputText(event.target.value);
-  };
-
   const addTodo: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    if (inputText !== '') {
+    if (inputText.trim() !== '') {
       const newTodo: TodoItem = {
         id: uuidv4(),
         text: inputText,
@@ -36,14 +32,14 @@ function App() {
   };
 
   const completedTodos = (id: string) => {
-    const checkedTodo = todos.map((todo) => {
+    const checkedTodos = todos.map((todo) => {
       if (todo.id === id) {
         return { ...todo, completed: !todo.completed };
       } else {
         return todo;
       }
     });
-    return setTodos(checkedTodo);
+    return setTodos(checkedTodos);
   };
 
   return (
@@ -61,7 +57,7 @@ function App() {
             <input
               maxLength={30}
               placeholder="Enter todo..."
-              onChange={handleChange}
+              onChange={(e) => setInputText(e.target.value)}
               value={inputText ? inputText : ''}
               className="border-slate-200 rounded-l-lg border-solid border-2 focus:outline-none focus:border-purple-300 pl-4 w-80"
             />
@@ -73,6 +69,7 @@ function App() {
         <section>
           <TodoList
             todos={todos}
+            setTodos={setTodos}
             completedTodos={completedTodos}
             removeTodo={removeTodo}
           />
