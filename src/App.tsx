@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import TodoList from './components/TodoList';
+import ThemeButton from './components/ThemeButton';
+import { useThemeContext } from './context/ThemeContext';
 
 type TodoItem = {
   id: string;
@@ -42,11 +44,14 @@ function App() {
     return setTodos(checkedTodos);
   };
 
+  const { darkMode } = useThemeContext();
+
   return (
     <>
-      <div className="">
-        <section className="py-10 relative">
-          <h1 className="absolute top-4 left-5 font-semibold text-gray-600 text-xl">
+      <div className={darkMode ? 'dark' : ''}>
+        <section className="py-10 relative h-full">
+          <ThemeButton />
+          <h1 className="absolute top-4 left-5 font-semibold text-gray-600 text-xl dark:text-gray-200">
             {todos.length === 0
               ? null
               : todos.length === 1
