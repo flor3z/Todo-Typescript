@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import TodoList from './components/TodoList';
 import ThemeButton from './components/ThemeButton';
@@ -11,8 +11,19 @@ type TodoItem = {
 };
 
 function App() {
+  const getLocalTodos = () => {
+    const localTodos = localStorage.getItem('todos');
+    return localTodos ? JSON.parse(localTodos) : [];
+  };
+
   const [inputText, setInputText] = useState('');
-  const [todos, setTodos] = useState<TodoItem[]>([]);
+  const [todos, setTodos] = useState<TodoItem[]>(getLocalTodos());
+
+  useEffect(() => {
+    if (todos.length > 0) {
+      localStorage.setItem('todos', JSON.stringify(todos));
+    }
+  }, [todos]);
 
   const addTodo: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
