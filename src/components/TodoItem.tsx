@@ -62,6 +62,7 @@ const ToDoItem = ({
                 onClick={() => completedTodos(todo.id)}
                 id="purple-checkbox"
                 type="checkbox"
+                defaultChecked={todo.completed}
                 className="w-5 h-5 accent-purple-500 bg-gray-100 border-purple-300 rounded-md focus:ring-purple-500  focus:ring-1 "
               />
             </div>

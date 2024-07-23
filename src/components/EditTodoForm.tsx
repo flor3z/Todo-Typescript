@@ -22,14 +22,16 @@ const EditTodoForm = ({
   handleUpdatedTodos,
 }: TodoEditProps) => {
   return (
-    <div className="flex text-center justify-center bg-opacity-75 ">
-      <div className="flex justify-evenly items-center">
-        <label className="text-lg font-bold">Edit Todo</label>
+    <div className="flex text-center justify-center bg-opacity-75 py-4 animate-fade-right animate-duration-[400ms] animate-ease-in-out">
+      <div className="flex space-between items-center">
+        <label className="text-lg font-bold pr-2">Edit Todo</label>
         <form
+          className="flex space-between"
           onSubmit={(e) => (handleUpdatedTodos(todo.id), e.preventDefault())}
         >
           <input
             value={editInput}
+            className="py-2 w-60"
             onChange={(e) => setEditInput(e.target.value)}
           />
           <div>
