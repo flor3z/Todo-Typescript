@@ -20,7 +20,7 @@ const TodoList = ({
   completedTodos,
 }: TodoListProps) => {
   return (
-    <ul className="flex-col items-center  max-w-md sm:max-w-3xl mx-auto rounded-sm bg-stone-100 shadow-lg divide-y divide-purple-300 animate-fade-right animate-ease-in-out">
+    <ul className="flex-col items-center max-w-md sm:max-w-xl mx-auto rounded-md bg-stone-100 shadow-lg divide-y divide-purple-300 animate-fade-right animate-ease-in-out">
       {todos.map((todo) => (
         <ToDoItem
           todos={todos}

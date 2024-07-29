@@ -60,36 +60,38 @@ function App() {
   return (
     <>
       <div className={darkMode ? 'dark' : ''}>
-        <section className="py-10 relative h-full">
-          <ThemeButton />
-          <h1 className="absolute top-4 left-5 font-semibold text-gray-600 text-xl dark:text-gray-200">
-            {todos.length === 0
-              ? null
-              : todos.length === 1
-              ? `You have ${todos.length} task left!`
-              : `You have ${todos.length} task's left`}
-          </h1>
-          <form onSubmit={addTodo} className="flex justify-center">
-            <input
-              maxLength={30}
-              placeholder="Enter todo..."
-              onChange={(e) => setInputText(e.target.value)}
-              value={inputText ? inputText : ''}
-              className="border-slate-200 rounded-l-lg border-solid border-2 focus:outline-none focus:border-purple-300 pl-4 w-80"
+        <div className="bg-gray-400 dark:bg-[#9135ff] min-h-screen">
+          <section className="py-10 relative ">
+            <ThemeButton />
+            <h1 className="absolute top-4 left-5 font-semibold text-gray-600 text-xl dark:text-gray-200">
+              {todos.length === 0
+                ? null
+                : todos.length === 1
+                ? `You have ${todos.length} task left!`
+                : `You have ${todos.length} task's left`}
+            </h1>
+            <form onSubmit={addTodo} className="flex justify-center">
+              <input
+                maxLength={30}
+                placeholder="Enter todo..."
+                onChange={(e) => setInputText(e.target.value)}
+                value={inputText ? inputText : ''}
+                className="border-slate-200 rounded-l-lg border-solid border-2 focus:outline-none focus:border-purple-300 pl-4 w-80"
+              />
+              <button className="bg-purple-400 text-white p-2 rounded-r-lg tracking-wider font-medium hover:bg-purple-300 active:bg-purple-500 transition transform duration-100 ease-in-out">
+                Submit
+              </button>
+            </form>
+          </section>
+          <section>
+            <TodoList
+              todos={todos}
+              setTodos={setTodos}
+              completedTodos={completedTodos}
+              removeTodo={removeTodo}
             />
-            <button className="bg-purple-400 text-white p-2 rounded-r-lg tracking-wider font-medium hover:bg-purple-300 active:bg-purple-500 transition transform duration-100 ease-in-out">
-              Submit
-            </button>
-          </form>
-        </section>
-        <section>
-          <TodoList
-            todos={todos}
-            setTodos={setTodos}
-            completedTodos={completedTodos}
-            removeTodo={removeTodo}
-          />
-        </section>
+          </section>
+        </div>
       </div>
     </>
   );

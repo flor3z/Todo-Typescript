@@ -56,7 +56,7 @@ const ToDoItem = ({
         />
       ) : (
         <div>
-          <li className="flex justify-between mx-auto max-w-sm sm:max-w-lg py-4 animate-fade-right animate-duration-[400ms] animate-ease-in-out">
+          <li className="flex justify-between mx-auto  max-w-sm sm:max-w-lg py-4 animate-fade-right animate-duration-[400ms] animate-ease-in-out">
             <div className="flex items-center me-4">
               <input
                 onClick={() => completedTodos(todo.id)}
