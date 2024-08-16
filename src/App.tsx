@@ -60,10 +60,10 @@ function App() {
   return (
     <>
       <div className={darkMode ? 'dark' : ''}>
-        <div className="bg-gray-400 dark:bg-[#9135ff] min-h-screen">
+        <div className="bg-gray-400 dark:bg-[#532b83] min-h-screen">
           <section className="py-10 relative ">
             <ThemeButton />
-            <h1 className="absolute top-4 left-5 font-semibold text-gray-600 text-xl dark:text-gray-200">
+            <h1 className="absolute top-4 left-5 font-semibold text-gray-600 text-lg sm:text-xl dark:text-gray-200">
               {todos.length === 0
                 ? null
                 : todos.length === 1
@@ -76,7 +76,7 @@ function App() {
                 placeholder="Enter todo..."
                 onChange={(e) => setInputText(e.target.value)}
                 value={inputText ? inputText : ''}
-                className="border-slate-200 rounded-l-lg border-solid border-2 focus:outline-none focus:border-purple-300 pl-4 w-80"
+                className="border-slate-200 rounded-l-lg border-solid border-2 focus:outline-none focus:border-purple-300 pl-1 sm:pl-4 w-56 sm:w-80"
               />
               <button className="bg-purple-400 text-white p-2 rounded-r-lg tracking-wider font-medium hover:bg-purple-300 active:bg-purple-500 transition transform duration-100 ease-in-out">
                 Submit

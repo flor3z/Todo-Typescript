@@ -22,24 +22,28 @@ const EditTodoForm = ({
   handleUpdatedTodos,
 }: TodoEditProps) => {
   return (
-    <div className="flex text-center justify-center bg-opacity-75 py-4 animate-fade-right animate-duration-[400ms] animate-ease-in-out">
-      <div className="flex space-between items-center">
-        <label className="text-lg font-bold pr-2">Edit Todo</label>
+    <div className="flex text-center justify-center bg-opacity-75 py-4 animate-fade-left animate-duration-[400ms] animate-ease-in-out">
+      <div className="flex justify-between">
+        <div className="flex flex-col text-left">
+          <label className="text-lg font-bold pr-2">Edit</label>
+          <label className="text-lg font-bold pr-2">Todo</label>
+        </div>
         <form
           className="flex space-between"
           onSubmit={(e) => (handleUpdatedTodos(todo.id), e.preventDefault())}
         >
           <input
+            maxLength={25}
             value={editInput}
-            className="py-2 w-60"
+            className="py-2 w-60 shadow-md rounded-sm pl-1"
             onChange={(e) => setEditInput(e.target.value)}
           />
-          <div>
-            <button className="px-2 text-white bg-purple-400 mx-1 rounded-sm">
+          <div className="flex flex-col justify-between ml-1">
+            <button className="px-2 text-white bg-purple-400 rounded-sm mb-1">
               Save
             </button>
             <button
-              className="px-2 text-white bg-purple-400 rounded-sm"
+              className="px-2 text-white bg-purple-400 rounded-sm "
               type="button"
               onClick={() => setEdit(!edit)}
             >

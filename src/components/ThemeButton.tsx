@@ -8,12 +8,12 @@ const ThemeButton = () => {
   return (
     <span
       onClick={() => setDarkMode(!darkMode)}
-      className="absolute top-10 right-2 sm:right-10 rounded-full shadow-lg cursor-pointer bg-gray-500 hover:bg-gray-700   w-11 h-11 transition-all transform ease-out duration-500"
+      className="absolute top-10 right-2 sm:right-10 rounded-full shadow-lg cursor-pointer bg-gray-500 hover:bg-gray-700 w-9 h-9  sm:w-11 sm:h-11 transition-all transform ease-out duration-500"
     >
       {!darkMode ? (
-        <BsMoonFill className="w-11 h-11 p-1 text-amber-200 " />
+        <BsMoonFill className="w-9 h-9 sm:w-11 sm:h-11 p-1 text-amber-200 " />
       ) : (
-        <MdSunny className="w-11 h-11 p-1 text-yellow-500 transition-all transform ease-out duration-500" />
+        <MdSunny className="w-9 h-9 sm:w-11 sm:h-11 p-1 text-yellow-500 transition-all transform ease-out duration-500" />
       )}
     </span>
   );

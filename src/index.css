@@ -2,13 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  background-color: rgb(213, 213, 213);
-} */
-/* 
-.dark {
-  background-color: rgb(145, 53, 231);
-} */
+
 
 body * {
   @apply transition-colors duration-200;

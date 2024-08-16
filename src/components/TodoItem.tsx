@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import EditTodoForm from './EditTodoForm';
+import { FaRegEdit } from 'react-icons/fa';
 
 type TodoItem = {
   id: string;
@@ -56,7 +57,7 @@ const ToDoItem = ({
         />
       ) : (
         <div>
-          <li className="flex justify-between mx-auto  max-w-sm sm:max-w-lg py-4 animate-fade-right animate-duration-[400ms] animate-ease-in-out">
+          <li className="flex justify-between mx-auto  max-w-80 sm:max-w-lg py-4 animate-fade-right animate-duration-[400ms] animate-ease-in-out">
             <div className="flex items-center me-4">
               <input
                 onClick={() => completedTodos(todo.id)}
@@ -72,14 +73,11 @@ const ToDoItem = ({
               </span>
             </div>
             <div className="flex items-center">
-              <button
-                onClick={() => handleEdit(todo.id)}
-                className="text-xl hover:scale-90 transition transform duration-100 ease-out mx-3"
-              >
-                📝
+              <button onClick={() => handleEdit(todo.id)}>
+                <FaRegEdit className="font-bold text-xl text-purple-500 hover:text-purple-400 active:text-purple-500  hover:scale-90 transition transform duration-100 ease-out mx-3" />
               </button>
               <button
-                className="font-bold text-xl text-purple-500 hover:text-purple-300 active:text-purple-500 active:scale-90 transition transform duration-100 ease-out"
+                className="font-bold text-xl text-purple-500 hover:text-purple-400 active:text-purple-500 hover:scale-90 transition transform duration-100 ease-out"
                 onClick={() => removeTodo(todo.id)}
               >
                 X
