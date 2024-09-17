@@ -61,10 +61,9 @@ const ToDoItem = ({
             <div className="flex items-center me-4">
               <input
                 onClick={() => completedTodos(todo.id)}
-                id="purple-checkbox"
                 type="checkbox"
                 defaultChecked={todo.completed}
-                className="w-5 h-5 accent-purple-500 bg-gray-100 border-purple-300 rounded-md focus:ring-purple-500  focus:ring-1 "
+                className="w-5 h-5 accent-purple-500  bg-gray-100 border-purple-300  ring-inset ring-2 ring-purple-500 "
               />
             </div>
             <div className="mr-auto p-3">

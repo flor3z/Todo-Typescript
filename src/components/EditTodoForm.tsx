@@ -24,7 +24,7 @@ const EditTodoForm = ({
   return (
     <div className="flex text-center justify-center bg-opacity-75 py-4 animate-fade-left animate-duration-[400ms] animate-ease-in-out">
       <div className="flex justify-between">
-        <div className="flex flex-col text-left">
+        <div className="flex flex-col sm:flex-row items-center text-left">
           <label className="text-lg font-bold pr-2">Edit</label>
           <label className="text-lg font-bold pr-2">Todo</label>
         </div>
@@ -35,7 +35,7 @@ const EditTodoForm = ({
           <input
             maxLength={25}
             value={editInput}
-            className="py-2 w-60 shadow-md rounded-sm pl-1"
+            className="py-2 w-60 shadow-md rounded-sm pl-1 outline-none"
             onChange={(e) => setEditInput(e.target.value)}
           />
           <div className="flex flex-col justify-between ml-1">

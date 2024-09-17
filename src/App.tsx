@@ -61,15 +61,18 @@ function App() {
     <>
       <div className={darkMode ? 'dark' : ''}>
         <div className="bg-gray-400 dark:bg-[#532b83] min-h-screen">
+          <h1 className="flex justify-center font-semibold text-5xl pt-10 text-gray-200">
+            To Do List
+          </h1>
           <section className="py-10 relative ">
             <ThemeButton />
-            <h1 className="absolute top-4 left-5 font-semibold text-gray-600 text-lg sm:text-xl dark:text-gray-200">
+            <h2 className="absolute top-4 left-5 font-semibold text-gray-200 text-lg sm:text-xl dark:text-gray-200">
               {todos.length === 0
                 ? null
                 : todos.length === 1
                 ? `You have ${todos.length} task left!`
                 : `You have ${todos.length} task's left`}
-            </h1>
+            </h2>
             <form onSubmit={addTodo} className="flex justify-center">
               <input
                 maxLength={30}
