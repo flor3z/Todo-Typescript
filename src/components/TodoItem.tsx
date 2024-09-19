@@ -63,7 +63,7 @@ const ToDoItem = ({
                 onClick={() => completedTodos(todo.id)}
                 type="checkbox"
                 defaultChecked={todo.completed}
-                className="w-5 h-5 accent-purple-500  bg-gray-100 border-purple-300  ring-inset ring-2 ring-purple-500 "
+                className="w-5 h-5 accent-purple-500  ring-inset ring-2 ring-purple-500 "
               />
             </div>
             <div className="mr-auto p-3">
@@ -73,10 +73,10 @@ const ToDoItem = ({
             </div>
             <div className="flex items-center">
               <button onClick={() => handleEdit(todo.id)}>
-                <FaRegEdit className="font-bold text-xl text-purple-500 hover:text-purple-400 active:text-purple-500  hover:scale-90 transition transform duration-100 ease-out mx-3" />
+                <FaRegEdit className="font-bold text-xl text-[#13b874] hover:text-[#4eb58a]   hover:scale-90 transition transform duration-100 ease-out mx-3" />
               </button>
               <button
-                className="font-bold text-xl text-purple-500 hover:text-purple-400 active:text-purple-500 hover:scale-90 transition transform duration-100 ease-out"
+                className="font-bold text-xl text-purple-500 hover:text-purple-400  hover:scale-90 transition transform duration-100 ease-out"
                 onClick={() => removeTodo(todo.id)}
               >
                 X

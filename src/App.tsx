@@ -20,9 +20,7 @@ function App() {
   const [todos, setTodos] = useState<TodoItem[]>(getLocalTodos());
 
   useEffect(() => {
-    if (todos.length > 0) {
-      localStorage.setItem('todos', JSON.stringify(todos));
-    }
+    localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 
   const addTodo: React.FormEventHandler<HTMLFormElement> = (event) => {
@@ -60,7 +58,7 @@ function App() {
   return (
     <>
       <div className={darkMode ? 'dark' : ''}>
-        <div className="bg-gray-400 dark:bg-[#532b83] min-h-screen">
+        <div className="bg-zinc-400 dark:bg-[#4d4183] min-h-screen">
           <h1 className="flex justify-center font-semibold text-5xl pt-10 text-gray-200">
             To Do List
           </h1>
@@ -81,7 +79,7 @@ function App() {
                 value={inputText ? inputText : ''}
                 className="border-slate-200 rounded-l-lg border-solid border-2 focus:outline-none focus:border-purple-300 pl-1 sm:pl-4 w-56 sm:w-80"
               />
-              <button className="bg-purple-400 text-white p-2 rounded-r-lg tracking-wider font-medium hover:bg-purple-300 active:bg-purple-500 transition transform duration-100 ease-in-out">
+              <button className="bg-[#13b874] text-white p-2 rounded-r-lg tracking-wider font-medium hover:bg-[#3ca87b]  transition transform duration-100 ease-in-out">
                 Submit
               </button>
             </form>

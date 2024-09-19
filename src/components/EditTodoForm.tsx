@@ -39,11 +39,11 @@ const EditTodoForm = ({
             onChange={(e) => setEditInput(e.target.value)}
           />
           <div className="flex flex-col justify-between ml-1">
-            <button className="px-2 text-white bg-purple-400 rounded-sm mb-1">
+            <button className="px-2 text-white bg-purple-400 rounded-sm mb-1 hover:bg-purple-500">
               Save
             </button>
             <button
-              className="px-2 text-white bg-purple-400 rounded-sm "
+              className="px-2 text-white bg-purple-400 rounded-sm hover:bg-purple-500"
               type="button"
               onClick={() => setEdit(!edit)}
             >
