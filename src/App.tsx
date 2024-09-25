@@ -8,6 +8,7 @@ type TodoItem = {
   id: string;
   text: string;
   completed: boolean;
+  timeStamp: string;
 };
 
 function App() {
@@ -23,6 +24,30 @@ function App() {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
 
+  const getTimeStamp = () => {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+
+    let d = new Date();
+    let day = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+
+    return `Added: ${month} ${day}, ${year}`;
+  };
+
   const addTodo: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     if (inputText.trim() !== '') {
@@ -30,6 +55,7 @@ function App() {
         id: uuidv4(),
         text: inputText,
         completed: false,
+        timeStamp: getTimeStamp(),
       };
       setTodos([...todos, newTodo]);
     }

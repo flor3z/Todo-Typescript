@@ -6,6 +6,7 @@ type TodoItem = {
   id: string;
   text: string;
   completed: boolean;
+  timeStamp: string;
 };
 
 type TodoProps = {
@@ -83,6 +84,9 @@ const ToDoItem = ({
               </button>
             </div>
           </li>
+          <div className="flex flex-col text-left text-sm text-neutral-400 font-sans italic font-semibold pl-2">
+            {todo.timeStamp}
+          </div>
         </div>
       )}
     </div>
